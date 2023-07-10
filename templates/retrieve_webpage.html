@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <title>Retreiving Webpage</title>
+</head>
+<body>
+    <center>
+        <h1>Retreiving Data from Webpage</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="topic">Topic Name</label>
+            <select name="topic" id="topic" multiple>
+            {% for to in LTO %}
+                <option value="{{to}}">{{to.topic_name}}</option>
+            {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="Retrieve Webpage" class="">
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display AccessRecord</title>
+</head>
+<body>
+    <center>
+        <h1>Displaying of Retrieved AccessRecord</h1>
+        <table border="4px" cellpadding="5px" cellspacing="5px">
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Author</th>
+            </tr>
+            {% for ao in RARO %}
+                <tr>
+                    <td>{{ao.name}}</td>
+                    <td>{{ao.date}}</td>
+                    <td>{{ao.author}}</td>
+                </tr
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>

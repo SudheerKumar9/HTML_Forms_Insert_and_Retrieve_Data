@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <title>Insert Webpage Form</title>
+</head>
+<body>
+    <center>
+        
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-5 m-auto">
+                        <div class="card">
+                            <div class="card-body bg-success text-center">
+                                <h2 class="text-white">Insert Webpage</h2>
+                                
+                            </div>
+                            <div class="card-body bg-light">
+                                <form id="login-form">
+                                    <div class="form-group">
+                                        <label for="topic" class="form-control">Enter Topic Name
+                                        <select name="topic" id="topic">
+                                            {% for to in LTO %}
+                                                <option value="{{to}}">{{to.topic_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        </label>
+
+                    
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Enter Name" class="form-control" name="nam" id="nam">
+                                        
+                    
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="url" placeholder="Enter Url" class="form-control" name="ur" id="ur">
+                                        
+                    
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" name="" value="Insert Webpage" class="btn btn-md btn-success">
+                                        
+                    
+                                    </div>
+                                </form>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>	
+                </div>	
+            </div>
+            <!--
+            <label for="topic">Topic Name</label>
+            <select name="topic" id="topic">
+            {% for to in LTO %}
+                <option value="{{to}}">{{to.topic_name}}</option>
+            {% endfor %}
+            </select>
+            <br>
+            <label for="nam">Enter name</label>
+            <input type="text" name="nam" id="nam"><br>
+
+            <label for="ur">Enter url</label>
+            <input type="url" name="ur" id="ur"><br>
+
+
+            <br>
+            <input type="submit" value="Insert Webpage">
+            -->
+
+        </form>
+    </center>
+</body>
+</html>

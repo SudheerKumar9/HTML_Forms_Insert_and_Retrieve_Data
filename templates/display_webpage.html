@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Webpage</title>
+</head>
+<body>
+    <center>
+        <h1>Displaying of Webpages</h1>
+        <table border="4px" cellpadding="5px" cellspacing="5px">
+            <tr>
+                <th>Topic Name</th>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+            {% for wo in RWOS %}
+                <tr>
+                    <td>{{wo.topic_name}}</td>
+                    <td>{{wo.name}}</td>
+                    <td>{{wo.url}}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+    </center>
+</body>
+</html>

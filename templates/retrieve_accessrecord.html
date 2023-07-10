@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <title>Retreive AccessRecord</title>
+</head>
+<body>
+    <center>
+        <h1>Retrieving Data from AccessRecord</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="nam">Name</label>
+            <select name="nam" id="nam" multiple>
+                {% for wo in LWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="Retreive AccessRecord">
+
+        </form>
+    </center>
+</body>
+</html>

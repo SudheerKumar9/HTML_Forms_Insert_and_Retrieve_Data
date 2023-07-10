@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <title>Check Box</title>
+</head>
+<body>
+    <center>
+        <form action="{% url 'retrieve_webpage' %}" method="POST">
+            <h1>CheckBox </h1>
+            {% csrf_token %}
+    
+            {% for to in LTO %}
+    
+                <label for="topic">{{to.topic_name}}</label>
+                <input type="checkbox" name="topic" id="topic" value="{{to}}">
+                <br><br>
+    
+            {% endfor %}
+            <input type="submit" value="CheckBox Submit" class="btn btn-md btn-danger">
+        </form>
+    </center>
+</body>
+</html>
